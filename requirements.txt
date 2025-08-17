@@ -1,0 +1,8 @@
+flask
+gunicorn
+streamlit
+pypdf
+langchain
+langchain-google-genai
+google-generativeai
+python-dotenv
