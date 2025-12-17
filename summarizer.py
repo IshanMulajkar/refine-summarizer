@@ -1,7 +1,7 @@
 import os
 from pypdf import PdfReader
 from langchain_core.documents import Document
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.prompts import PromptTemplate
 from langchain.chains.summarize import load_summarize_chain
 from langchain_google_genai import ChatGoogleGenerativeAI
