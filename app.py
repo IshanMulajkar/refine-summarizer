@@ -44,8 +44,8 @@ PAGE = """
       <div>
         <label>Model</label><br/>
         <select name="model">
-          <option value="gemini-2.5-flash" {% if model=='gemini-2.5-flash' %}selected{% endif %}>gemini-2.5-flash (fast, free)</option>
-          <option value="gemini-2.5-pro" {% if model=='gemini-2.5-pro' %}selected{% endif %}>gemini-2.5-pro (richer)</option>
+          <option value="gemini-2.0-flash-exp" {% if model=='gemini-2.0-flash-exp' %}selected{% endif %}>gemini-2.0-flash-exp (fast, free)</option>
+          <option value="gemini-1.5-pro" {% if model=='gemini-1.5-pro' %}selected{% endif %}>gemini-1.5-pro (richer)</option>
         </select>
       </div>
       <div>
@@ -76,7 +76,7 @@ PAGE = """
 def index():
     text = ""
     summary = None
-    model = "gemini-2.5-flash"
+    model = "gemini-2.0-flash-exp"
     chunk_size = 1800
     chunk_overlap = 200
 
