@@ -1,6 +1,6 @@
 import os
 from pypdf import PdfReader
-from langchain.docstore.document import Document
+from langchain_core.documents import Document
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.prompts import PromptTemplate
 from langchain.chains.summarize import load_summarize_chain
@@ -20,7 +20,7 @@ def extract_text_from_pdf(file_like) -> str:
 # ---------- Refine summarizer ----------
 def refine_summarize_text(
     text: str,
-    model: str = "gemini-2.5-flash",   # fast & lighter on free tier
+    model: str = "gemini-2.0-flash-exp",
     temperature: float = 0.1,
     chunk_size: int = 1800,
     chunk_overlap: int = 200,
@@ -57,4 +57,6 @@ def refine_summarize_text(
         verbose=False
     )
 
-    return chain.run(docs)
+    # Use invoke() for newer langchain versions
+    result = chain.invoke({"input_documents": docs})
+    return result["output_text"]
