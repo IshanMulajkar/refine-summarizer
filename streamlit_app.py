@@ -12,7 +12,7 @@ st.title("Refine Summarizer (Gemini + LangChain)")
 st.write("Paste text or upload a PDF. The app will use **RefineChain** to iteratively build a concise, accurate summary.")
 
 with st.sidebar:
-    model = st.selectbox("Model", ["gemini-2.5-flash", "gemini-2.5-pro"], index=0)
+    model = st.selectbox("Model", ["gemini-2.0-flash-exp", "gemini-1.5-pro"], index=0)
     chunk_size = st.slider("Chunk size", 500, 6000, 1800, 100)
     chunk_overlap = st.slider("Chunk overlap", 0, 1000, 200, 50)
     st.caption("Use smaller chunk size if you hit rate limits.")
